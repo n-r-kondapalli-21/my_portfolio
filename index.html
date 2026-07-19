@@ -3,24 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio - AIML Graduate</title>
+    <meta name="description" content="Python Developer | AI Engineer | Algorithmic Trading Engineer - Professional Portfolio of Narayana Rao Kondapalli">
+    <meta name="keywords" content="Python Developer, AI Engineer, Algorithmic Trading, Machine Learning, LLM, LangChain, FastAPI">
+    <title>Narayana Rao Kondapalli | Python Developer | AI Engineer | Algorithmic Trading Engineer</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 </head>
 <body>
+    <!-- Loading Animation -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress">
+        <div class="progress-bar"></div>
+    </div>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+    </button>
+
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="logo">kondapalli-ai.tech</div>
+        <div class="logo">NRK<span class="logo-dot">.</span></div>
         <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#education-experience">Education & Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#hero" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#expertise" class="nav-link">Expertise</a></li>
+            <li><a href="#github" class="nav-link">GitHub</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
         <div class="burger">
             <div class="line1"></div>
@@ -34,24 +55,64 @@
         <div id="particles-js"></div>
         <div class="hero-content">
             <div class="hero-text">
-                <h1 data-aos="fade-down">Hi, I'm <span class="highlight">Narayana Rao Kondapalli</span></h1>
-                <h2 data-aos="fade-up" data-aos-delay="200">I'm a <span id="typewriter"></span></h2>
-                <a href="#projects" class="cta-button" data-aos="fade-up" data-aos-delay="400">View My Work</a>
+                <p class="hero-greeting" data-aos="fade-down">Hello, I'm</p>
+                <h1 class="hero-name" data-aos="fade-down" data-aos-delay="100">
+                    <span class="highlight">Narayana Rao</span>
+                    <br>Kondapalli
+                </h1>
+                <h2 class="hero-title" data-aos="fade-up" data-aos-delay="200">
+                    <span id="typewriter"></span>
+                </h2>
+                <p class="hero-description" data-aos="fade-up" data-aos-delay="300">
+                    Engineering graduate specializing in Artificial Intelligence with strong experience in Python development, LLM applications, AI Agents, FastAPI, RAG, and algorithmic trading systems.
+                </p>
+                <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
+                    <a href="#projects" class="cta-button primary">
+                        <i class="fas fa-rocket"></i> View Projects
+                    </a>
+                    <a href="#contact" class="cta-button secondary">
+                        <i class="fas fa-envelope"></i> Contact Me
+                    </a>
+                </div>
+                <div class="hero-social" data-aos="fade-up" data-aos-delay="500">
+                    <a href="https://github.com/n-r-kondapalli-21" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/narayana-rao-kondapalli-110810318/" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:narayanakondapalli@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
             </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <p>Scroll Down</p>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
-        <h2 class="section-title" data-aos="fade-up">About Me</h2>
+        <div class="section-bg"></div>
+        <h2 class="section-title" data-aos="fade-up">
+            <span class="title-number">01.</span> About Me
+            <span class="title-line"></span>
+        </h2>
         <div class="about-content">
             <div class="about-image" data-aos="fade-right">
-                <img src="IMG_20250428_132256.jpg" alt="About Me Image" class="about-photo">
+                <div class="image-wrapper">
+                    <img src="IMG_20250428_132256.jpg" alt="Narayana Rao Kondapalli" class="about-photo">
+                    <div class="image-overlay"></div>
+                </div>
             </div>
             <div class="about-text" data-aos="fade-left">
-                <p>Engineering graduate with hands-on experience in machine learning, data preprocessing, and predictive model development. Completed an internship and trainee role with strong practical exposure to Python, pandas, and Scikit-learn, focusing on building and optimizing ML solutions for real-world problems.</p>
-                <p>Developed a loan approval prediction system using Logistic Regression, Decision Trees, Random Forests, and K-Nearest Neighbors. Achieved over 80% accuracy through iterative feature engineering, model evaluation, and performance tuning, gaining a solid understanding of end-to-end ML workflows.</p>
-                <p>Also completed a role as an RCD Engineer Trainee at Alpha Inventors Pvt Ltd, working in an R&D environment with exposure to engineering processes, testing workflows, and development support activities. Highly motivated to build purpose-driven technology and continuously strengthen technical and problem-solving skills.</p>
+                <p> I'm a recently graduated B.Tech Computer Science student with a strong interest in Artificial Intelligence and Machine Learning. I specialize in Python and scikit-learn, and have hands-on experience building real-world projects like loan approval prediction models.</p>
+                <p>I'm passionate about using data-driven technology to solve real-life problems and create meaningful impact. I enjoy learning about new advancements in AI, and I'm eager to apply that knowledge to develop innovative, practical solutions.</p>
+                <p>Now actively seeking entry-level roles or internships where I can grow as an AI/ML engineer, contribute to meaningful projects, and continue learning in a fast-paced, tech-driven environment.</p>
             </div>
         </div>
     </section>
@@ -75,20 +136,16 @@
             </div>
             
             <div class="experience-card" data-aos="fade-left">
-            <div class="card-icon">
-                <i class="fas fa-briefcase"></i>
-            </div>
-            <div class="card-content">
-                <h3>Experience</h3>
-                <div class="exp-details">
-                    <h4>R&amp;D Trainee</h4>
-                    <p class="company">Alpha Investors Pvt Ltd</p>
-                    <p class="description">
-                        Worked as an R&amp;D Trainee focusing on developing an automated algorithmic trading system, including strategy logic,
-                        indicator-based signal generation, trade execution workflows, and basic performance analysis
-                        using Python.
-                    </p>
-                    <div class="timeline-dot"></div>
+                <div class="card-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Experience</h3>
+                    <div class="exp-details">
+                        <h4>Fresh Graduate</h4>
+                        <p class="status">Ready to contribute</p>
+                        <div class="timeline-dot"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -97,38 +154,249 @@
 
     <!-- Skills Section -->
     <section id="skills" class="skills">
-        <h2 class="section-title" data-aos="fade-up">My Tech Stack</h2>
-        <div class="skills-container" data-aos="fade-up" data-aos-delay="200">
-            <div class="skill-category">
-                <h3>Programming & Databases</h3>
+        <div class="section-bg"></div>
+        <h2 class="section-title" data-aos="fade-up">
+            <span class="title-number">02.</span> Technical Skills
+            <span class="title-line"></span>
+        </h2>
+        <div class="skills-container">
+            <!-- Programming -->
+            <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                <div class="category-header">
+                    <i class="fas fa-code"></i>
+                    <h3>Programming</h3>
+                </div>
                 <div class="skill-items">
-                    <div class="skill-item"><i class="fab fa-python"></i> Python</div>
-                    <div class="skill-item"><i class="fab fa-java"></i> Java</div>
-                    <div class="skill-item"><i class="fas fa-database"></i> SQL</div>
+                    <div class="skill-item">
+                        <i class="fab fa-python"></i>
+                        <span>Python</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-database"></i>
+                        <span>SQL</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-code"></i>
+                        <span>C</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-java"></i>
+                        <span>Java</span>
+                    </div>
                 </div>
             </div>
-            <div class="skill-category">
-                <h3>AI & Machine Learning</h3>
+
+            <!-- AI/ML -->
+            <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                <div class="category-header">
+                    <i class="fas fa-brain"></i>
+                    <h3>AI / Machine Learning</h3>
+                </div>
                 <div class="skill-items">
-                    <div class="skill-item"><i class="fas fa-robot"></i> Scikit-learn</div>
-                    <div class="skill-item"><i class="fas fa-brain"></i> TensorFlow</div>
-                    <div class="skill-item"><i class="fas fa-cogs"></i> PyTorch</div>
+                    <div class="skill-item">
+                        <i class="fas fa-robot"></i>
+                        <span>Scikit-learn</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Pandas</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-calculator"></i>
+                        <span>NumPy</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Matplotlib</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-cogs"></i>
+                        <span>Data Analysis</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-tools"></i>
+                        <span>Feature Engineering</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Model Evaluation</span>
+                    </div>
                 </div>
             </div>
-            <div class="skill-category">
-                <h3>Data Science & Tools</h3>
+
+            <!-- Generative AI -->
+            <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+                <div class="category-header">
+                    <i class="fas fa-magic"></i>
+                    <h3>Generative AI</h3>
+                </div>
                 <div class="skill-items">
-                    <div class="skill-item"><i class="fas fa-chart-bar"></i> Pandas</div>
-                    <div class="skill-item"><i class="fas fa-calculator"></i> NumPy</div>
-                    <div class="skill-item"><i class="fas fa-paint-brush"></i> Matplotlib</div>
+                    <div class="skill-item">
+                        <i class="fas fa-language"></i>
+                        <span>Large Language Models</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-link"></i>
+                        <span>LangChain</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-project-diagram"></i>
+                        <span>LangGraph</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-search"></i>
+                        <span>RAG</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-user-robot"></i>
+                        <span>AI Agents</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-keyboard"></i>
+                        <span>Prompt Engineering</span>
+                    </div>
                 </div>
             </div>
-             <div class="skill-category">
-                <h3>Web Development</h3>
+
+            <!-- Backend -->
+            <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
+                <div class="category-header">
+                    <i class="fas fa-server"></i>
+                    <h3>Backend</h3>
+                </div>
                 <div class="skill-items">
-                    <div class="skill-item"><i class="fab fa-html5"></i> HTML</div>
-                    <div class="skill-item"><i class="fab fa-css3-alt"></i> CSS</div>
-                    <div class="skill-item"><i class="fab fa-js"></i> JavaScript</div>
+                    <div class="skill-item">
+                        <i class="fas fa-bolt"></i>
+                        <span>FastAPI</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>REST APIs</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Algorithmic Trading -->
+            <div class="skill-category" data-aos="fade-up" data-aos-delay="500">
+                <div class="category-header">
+                    <i class="fas fa-chart-candlestick"></i>
+                    <h3>Algorithmic Trading</h3>
+                </div>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <i class="fas fa-robot"></i>
+                        <span>OpenAlgo</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-angel"></i>
+                        <span>Angel One SmartAPI</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-wave-square"></i>
+                        <span>EMA Strategy</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-history"></i>
+                        <span>Backtesting</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-vector-square"></i>
+                        <span>VectorBT</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-plug"></i>
+                        <span>WebSockets</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-cogs"></i>
+                        <span>Trading Automation</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tools -->
+            <div class="skill-category" data-aos="fade-up" data-aos-delay="600">
+                <div class="category-header">
+                    <i class="fas fa-wrench"></i>
+                    <h3>Tools</h3>
+                </div>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <i class="fab fa-git-alt"></i>
+                        <span>Git</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-code"></i>
+                        <span>VS Code</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-book"></i>
+                        <span>Jupyter Notebook</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Postman</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cloud -->
+            <div class="skill-category" data-aos="fade-up" data-aos-delay="700">
+                <div class="category-header">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Cloud</h3>
+                </div>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <i class="fab fa-aws"></i>
+                        <span>AWS EC2</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="section-bg"></div>
+        <h2 class="section-title" data-aos="fade-up">
+            <span class="title-number">03.</span> Experience & Education
+            <span class="title-line"></span>
+        </h2>
+        <div class="timeline">
+            <!-- Experience -->
+            <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-dot">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Completed</div>
+                    <h3>R&D Engineer Trainee</h3>
+                    <h4>Alpha Inventors Pvt Ltd</h4>
+                    <ul class="timeline-responsibilities">
+                        <li>Python Development for AI and trading applications</li>
+                        <li>AI Research and implementation of LLM solutions</li>
+                        <li>Backend Development with FastAPI and REST APIs</li>
+                        <li>Automation of trading workflows and data pipelines</li>
+                        <li>Development of algorithmic trading strategies</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="timeline-dot">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Graduated</div>
+                    <h3>Bachelor of Technology</h3>
+                    <h4>Artificial Intelligence & Machine Learning</h4>
+                    <p>Specialized in AI/ML with focus on practical implementations in machine learning, deep learning, and natural language processing.</p>
                 </div>
             </div>
         </div>
@@ -136,58 +404,295 @@
 
     <!-- Projects Section -->
     <section id="projects" class="projects">
-        <h2 class="section-title" data-aos="fade-up">My Projects</h2>
+        <div class="section-bg"></div>
+        <h2 class="section-title" data-aos="fade-up">
+            <span class="title-number">04.</span> Featured Projects
+            <span class="title-line"></span>
+        </h2>
         <div class="projects-grid">
+            <!-- Project 1 -->
             <div class="project-card" data-aos="fade-up">
-                <h3>Project 1</h3>
-                <p>This project implements a system for the automatic classification of Diabetic Retinopathy (DR) from fundus images. It utilizes a hybrid approach combining a Generative Adversarial Network (GAN) to generate synthetic retinal images and a Convolutional Neural Network (CNN) to classify the severity of DR.</p>
-                <div class="project-links">
-                    <a href="https://github.com/n-r-kondapalli-21/diabetic-retinopathy-image-classification-" class="project-link">GitHub</a>
-                    <!-- <a href="javascript:void(0)" class="project-link disabled">Live Demo</a> -->
+                <div class="project-header">
+                    <div class="project-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/n-r-kondapalli-21" target="_blank" class="project-link" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                <h3>Provider-Agnostic AI Agent Framework</h3>
+                <p class="project-description">
+                    Designed a modular AI Agent framework supporting multiple LLM providers including OpenAI, Ollama, OpenRouter, and Gemini with configurable model switching, tool calling, planner architecture, and memory support.
+                </p>
+                <div class="project-technologies">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">LangGraph</span>
+                    <span class="tech-tag">LangChain</span>
+                    <span class="tech-tag">LLMs</span>
+                    <span class="tech-tag">Tool Calling</span>
                 </div>
             </div>
+
+            <!-- Project 2 -->
             <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                <h3>Project 2</h3>
-                <p>This project is a web application that predicts whether a loan application will be approved or not based on the applicant's information. It uses a machine learning model to make the predictions.</p>
-                <div class="project-links">
-                    <a href="https://github.com/n-r-kondapalli-21/loan-approval-prediction" class="project-link">GitHub</a>
-                    <!-- <a href="javascript:void(0)" class="project-link disabled">Live Demo</a> -->
+                <div class="project-header">
+                    <div class="project-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/n-r-kondapalli-21" target="_blank" class="project-link" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                <h3>Algorithmic Trading System</h3>
+                <p class="project-description">
+                    Built an automated trading framework integrating OpenAlgo and Angel One SmartAPI featuring EMA crossover strategies, live market data through WebSockets, backtesting with VectorBT, and automated order execution.
+                </p>
+                <div class="project-technologies">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">OpenAlgo</span>
+                    <span class="tech-tag">Angel One SmartAPI</span>
+                    <span class="tech-tag">VectorBT</span>
+                    <span class="tech-tag">Pandas</span>
                 </div>
             </div>
-            <div class="project-card" data-aos="fade-up" data-aos-delay="400">
-                <h3>Project 3</h3>
-                <p>This is a simple password generator application built with Streamlit. It allows users to generate strong, random passwords by specifying the number of letters, digits, and symbols they want.</p>
-                <div class="project-links">
-                    <a href="https://github.com/n-r-kondapalli-21/password_generator" class="project-link">GitHub</a>
-                    <!-- <a href="javascript:void(0)" class="project-link disabled">Live Demo</a> -->
+
+            <!-- Project 3 -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="project-header">
+                    <div class="project-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/n-r-kondapalli-21" target="_blank" class="project-link" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
                 </div>
+                <h3>Load Approval Prediction</h3>
+                <p class="project-description">
+                    Developed a machine learning model to predict loan approval status based on applicant data. Used classification algorithms to assess creditworthiness and automate loan decision-making processes.
+                </p>
+                <div class="project-technologies">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Scikit-learn</span>
+                    <span class="tech-tag">Pandas</span>
+                    <span class="tech-tag">NumPy</span>
+                    <span class="tech-tag">Machine Learning</span>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="project-header">
+                    <div class="project-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/n-r-kondapalli-21" target="_blank" class="project-link" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                <h3>AI Resume Screening API</h3>
+                <p class="project-description">
+                    Developed a FastAPI-based AI application that extracts text from resumes, generates embeddings using Sentence Transformers, compares resumes with job descriptions using semantic similarity, and ranks candidate suitability.
+                </p>
+                <div class="project-technologies">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">FastAPI</span>
+                    <span class="tech-tag">Sentence Transformers</span>
+                    <span class="tech-tag">REST API</span>
+                    <span class="tech-tag">NLP</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI & Trading Expertise Section -->
+    <section id="expertise" class="expertise">
+        <div class="section-bg"></div>
+        <h2 class="section-title" data-aos="fade-up">
+            <span class="title-number">05.</span> AI & Trading Expertise
+            <span class="title-line"></span>
+        </h2>
+        <div class="expertise-grid">
+            <div class="expertise-card" data-aos="fade-up">
+                <div class="expertise-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>AI Agent Development</h3>
+                <p>Building intelligent agents with LangGraph and LangChain, implementing tool-calling capabilities, memory management, and multi-step reasoning for complex tasks.</p>
+            </div>
+            <div class="expertise-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="expertise-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3>RAG Implementation</h3>
+                <p>Developing Retrieval-Augmented Generation systems for accurate, context-aware responses using vector databases and advanced embedding techniques.</p>
+            </div>
+            <div class="expertise-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="expertise-icon">
+                    <i class="fas fa-chart-candlestick"></i>
+                </div>
+                <h3>Trading Strategies</h3>
+                <p>Designing and implementing algorithmic trading strategies including EMA crossovers, backtesting frameworks, and automated execution systems.</p>
+            </div>
+            <div class="expertise-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="expertise-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3>Real-time Processing</h3>
+                <p>Building real-time data pipelines using WebSockets for live market data processing and instant AI model inference.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GitHub Statistics Section -->
+    <section id="github" class="github">
+        <div class="section-bg"></div>
+        <h2 class="section-title" data-aos="fade-up">
+            <span class="title-number">06.</span> GitHub Statistics
+            <span class="title-line"></span>
+        </h2>
+        <div class="github-content" data-aos="fade-up">
+            <div class="github-profile">
+                <img src="https://github.com/n-r-kondapalli-21.png" alt="GitHub Profile" class="github-avatar">
+                <div class="github-info">
+                    <h3>n-r-kondapalli-21</h3>
+                    <p>AI Engineer | Python Developer | Algorithmic Trading</p>
+                    <a href="https://github.com/n-r-kondapalli-21" target="_blank" class="github-button">
+                        <i class="fab fa-github"></i> View Profile
+                    </a>
+                </div>
+            </div>
+            <div class="github-stats">
+                <div class="github-stat-card">
+                    <i class="fas fa-code-branch"></i>
+                    <div class="stat-value" id="repo-count">Loading...</div>
+                    <div class="stat-label">Repositories</div>
+                </div>
+                <div class="github-stat-card">
+                    <i class="fas fa-star"></i>
+                    <div class="stat-value" id="star-count">Loading...</div>
+                    <div class="stat-label">Stars Earned</div>
+                </div>
+                <div class="github-stat-card">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-value" id="follower-count">Loading...</div>
+                    <div class="stat-label">Followers</div>
+                </div>
+                <div class="github-stat-card">
+                    <i class="fas fa-code-commit"></i>
+                    <div class="stat-value" id="commit-count">Loading...</div>
+                    <div class="stat-label">Total Commits</div>
+                </div>
+            </div>
+            <div class="github-contribution">
+                <img src="https://ghchart.rshah.org/n-r-kondapalli-21" alt="GitHub Contribution Graph" class="contribution-graph">
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="certificates">
+        <div class="section-bg"></div>
+        <h2 class="section-title" data-aos="fade-up">
+            <span class="title-number">07.</span> Certificates
+            <span class="title-line"></span>
+        </h2>
+        <div class="certificates-grid" data-aos="fade-up">
+            <div class="certificate-card">
+                <div class="certificate-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <h3>AI & Machine Learning</h3>
+                <p>Specialized certification in Artificial Intelligence and Machine Learning technologies and applications.</p>
+            </div>
+            <div class="certificate-card">
+                <div class="certificate-icon">
+                    <i class="fab fa-python"></i>
+                </div>
+                <h3>Python Development</h3>
+                <p>Advanced Python programming certification covering data structures, algorithms, and application development.</p>
+            </div>
+            <div class="certificate-card">
+                <div class="certificate-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Algorithmic Trading</h3>
+                <p>Certification in algorithmic trading strategies, market analysis, and automated trading systems.</p>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
-        <h2 class="section-title" data-aos="fade-up">Get in Touch</h2>
-        <div class="contact-container">
-            <div class="contact-info" data-aos="fade-right">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <p>narayanakondapalli148@gmail.com</p>
+        <div class="section-bg"></div>
+        <h2 class="section-title" data-aos="fade-up">
+            <span class="title-number">08.</span> Get In Touch
+            <span class="title-line"></span>
+        </h2>
+        <div class="contact-content">
+            <div class="contact-text" data-aos="fade-right">
+                <p class="contact-intro">
+                    I'm currently open to new opportunities and collaborations. Whether you have a question, a project idea, or just want to say hi, feel free to reach out!
+                </p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <a href="mailto:narayanakondapalli@gmail.com">narayanakondapalli@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>GitHub</h4>
+                            <a href="https://github.com/n-r-kondapalli-21" target="_blank">n-r-kondapalli-21</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>LinkedIn</h4>
+                            <a href="https://www.linkedin.com/in/narayana-rao-kondapalli-110810318/" target="_blank">Connect with me</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <p>+91 9515831426</p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <p>ongole,Andhra Pradesh,India</p>
+                <div class="resume-download">
+                    <a href="#" class="resume-button">
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
                 </div>
             </div>
-            <form id="contact-form" class="contact-form" action="https://formspree.io/f/xldnlnkn" method="POST" data-aos="fade-left">
-                <input type="text" name="name" placeholder="Name" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <textarea name="message" placeholder="Message" required></textarea>
-                <button type="submit" class="submit-btn">Send Message</button>
+            <form id="contact-form" class="contact-form" data-aos="fade-left">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    <i class="fas fa-comment"></i>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <span>Send Message</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
                 <p id="form-status"></p>
             </form>
         </div>
@@ -195,12 +700,25 @@
 
     <!-- Footer -->
     <footer>
-        <div class="social-links">
-            <a href="https://github.com/n-r-kondapalli-21?tab=repositories"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/narayana-rao-kondapalli-110810318/"><i class="fab fa-linkedin"></i></a>
-        
+        <div class="footer-content">
+            <div class="footer-social">
+                <a href="https://github.com/n-r-kondapalli-21" target="_blank" class="footer-social-link">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/narayana-rao-kondapalli-110810318/" target="_blank" class="footer-social-link">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:narayanakondapalli@gmail.com" class="footer-social-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <p class="footer-text">
+                Designed & Built by <span class="highlight">Narayana Rao Kondapalli</span>
+            </p>
+            <p class="footer-copyright">
+                &copy; 2026 All Rights Reserved
+            </p>
         </div>
-        <p>&copy; 2025 Narayana Rao Kondapalli. All rights reserved.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>

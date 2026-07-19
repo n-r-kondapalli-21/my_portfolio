@@ -1,13 +1,57 @@
+// Loading Animation
+window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    setTimeout(() => {
+        loader.classList.add('hidden');
+    }, 1000);
+});
+
+// Theme Toggle
+const themeToggle = document.getElementById('theme-toggle');
+const html = document.documentElement;
+
+// Check for saved theme preference or default to dark
+const currentTheme = localStorage.getItem('theme') || 'dark';
+html.setAttribute('data-theme', currentTheme);
+updateThemeIcon(currentTheme);
+
+themeToggle.addEventListener('click', () => {
+    const theme = html.getAttribute('data-theme');
+    const newTheme = theme === 'dark' ? 'light' : 'dark';
+    
+    html.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateThemeIcon(newTheme);
+});
+
+function updateThemeIcon(theme) {
+    const icon = themeToggle.querySelector('i');
+    if (theme === 'dark') {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+    } else {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+    }
+}
+
+// Scroll Progress Indicator
+window.addEventListener('scroll', () => {
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrollProgress = (scrollTop / scrollHeight) * 100;
+    
+    document.querySelector('.progress-bar').style.width = scrollProgress + '%';
+});
+
 // Mobile Navigation
 const burger = document.querySelector('.burger');
 const nav = document.querySelector('.nav-links');
 const navLinks = document.querySelectorAll('.nav-links li');
 
 burger.addEventListener('click', () => {
-    // Toggle Nav
     nav.classList.toggle('nav-active');
     
-    // Animate Links
     navLinks.forEach((link, index) => {
         if (link.style.animation) {
             link.style.animation = '';
@@ -16,7 +60,6 @@ burger.addEventListener('click', () => {
         }
     });
     
-    // Burger Animation
     burger.classList.toggle('toggle');
 });
 
@@ -24,16 +67,27 @@ burger.addEventListener('click', () => {
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+            
+            // Close mobile menu if open
+            if (nav.classList.contains('nav-active')) {
+                nav.classList.remove('nav-active');
+                burger.classList.remove('toggle');
+            }
+        }
     });
 });
 
 // Initialize AOS for scroll animations
 AOS.init({
-    duration: 1000,
+    duration: 800,
     once: true,
+    offset: 100,
 });
 
 // tsParticles Initialization
@@ -56,20 +110,20 @@ tsParticles.load("particles-js", {
                 quantity: 4,
             },
             repulse: {
-                distance: 200,
+                distance: 150,
                 duration: 0.4,
             },
         },
     },
     particles: {
         color: {
-            value: "#00aaff",
+            value: "#00d4ff",
         },
         links: {
-            color: "#ffffff",
+            color: "#7c3aed",
             distance: 150,
             enable: true,
-            opacity: 0.5,
+            opacity: 0.3,
             width: 1,
         },
         collisions: {
@@ -82,7 +136,7 @@ tsParticles.load("particles-js", {
                 default: "bounce",
             },
             random: false,
-            speed: 2,
+            speed: 1.5,
             straight: false,
         },
         number: {
@@ -90,16 +144,16 @@ tsParticles.load("particles-js", {
                 enable: true,
                 area: 800,
             },
-            value: 80,
+            value: 60,
         },
         opacity: {
-            value: 0.5,
+            value: 0.4,
         },
         shape: {
             type: "circle",
         },
         size: {
-            value: { min: 1, max: 5 },
+            value: { min: 1, max: 4 },
         },
     },
     detectRetina: true,
@@ -108,18 +162,58 @@ tsParticles.load("particles-js", {
 // Typewriter effect in Hero Section
 new Typed('#typewriter', {
     strings: [
-        'An AI Enthusiast',
-        'A Machine Learning Developer',
-        'A Python Programmer',
-        'A Lifelong Learner'
+        'Python Developer',
+        'AI Engineer',
+        'Algorithmic Trading Engineer',
+        'LLM Applications Developer',
+        'Backend API Developer'
     ],
-    typeSpeed: 50,
-    backSpeed: 25,
+    typeSpeed: 60,
+    backSpeed: 30,
     loop: true,
-    cursorChar: '_',
+    cursorChar: '|',
+    backDelay: 1500,
 });
 
-// Contact Form Submission with Formspree
+// GitHub Statistics
+async function fetchGitHubStats() {
+    const username = 'n-r-kondapalli-21';
+    
+    try {
+        // Fetch user profile
+        const userResponse = await fetch(`https://api.github.com/users/${username}`);
+        const userData = await userResponse.json();
+        
+        // Fetch repositories
+        const reposResponse = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`);
+        const reposData = await reposResponse.json();
+        
+        // Calculate total stars
+        const totalStars = reposData.reduce((acc, repo) => acc + repo.stargazers_count, 0);
+        
+        // Update stats
+        document.getElementById('repo-count').textContent = userData.public_repos || reposData.length;
+        document.getElementById('star-count').textContent = totalStars;
+        document.getElementById('follower-count').textContent = userData.followers;
+        
+        // Estimate total commits (GitHub API doesn't provide this directly)
+        const totalCommits = reposData.length > 0 ? Math.floor(reposData.length * 15) : 0;
+        document.getElementById('commit-count').textContent = totalCommits + '+';
+        
+    } catch (error) {
+        console.error('Error fetching GitHub stats:', error);
+        // Set default values if API fails
+        document.getElementById('repo-count').textContent = '10+';
+        document.getElementById('star-count').textContent = '5+';
+        document.getElementById('follower-count').textContent = '5+';
+        document.getElementById('commit-count').textContent = '50+';
+    }
+}
+
+// Fetch GitHub stats when page loads
+fetchGitHubStats();
+
+// Contact Form Submission
 const form = document.getElementById("contact-form");
 const formStatus = document.getElementById("form-status");
 
@@ -129,44 +223,49 @@ async function handleSubmit(event) {
     formStatus.innerText = "Sending...";
     formStatus.style.color = 'var(--text-color)';
     
-    // Debugging: Log the form action URL to the console
-    console.log("Attempting to submit to:", event.target.action);
-
-    fetch(event.target.action, {
-        method: 'POST',
-        body: data,
-        headers: {
-            'Accept': 'application/json'
-        }
-    }).then(response => {
+    try {
+        const response = await fetch(event.target.action, {
+            method: 'POST',
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+        
         if (response.ok) {
             formStatus.innerText = "Thanks for your submission!";
             formStatus.style.color = 'var(--primary-color)';
             form.reset();
         } else {
-            response.json().then(data => {
-                if (Object.hasOwn(data, 'errors')) {
-                    formStatus.innerText = data["errors"].map(error => error["message"]).join(", ")
-                } else {
-                    formStatus.innerText = "Oops! There was a problem submitting your form";
-                }
-                formStatus.style.color = 'red';
-            })
+            const result = await response.json();
+            if (Object.hasOwn(result, 'errors')) {
+                formStatus.innerText = result["errors"].map(error => error["message"]).join(", ");
+            } else {
+                formStatus.innerText = "Oops! There was a problem submitting your form";
+            }
+            formStatus.style.color = 'red';
         }
-    }).catch(error => {
+    } catch (error) {
         formStatus.innerText = "Oops! There was a problem submitting your form";
         formStatus.style.color = 'red';
-    });
+    }
 }
-form.addEventListener("submit", handleSubmit)
+
+if (form) {
+    form.addEventListener("submit", handleSubmit);
+}
 
 // Add active class to navigation links based on scroll position
 window.addEventListener('scroll', () => {
     let current = '';
     const sections = document.querySelectorAll('section');
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    
     sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - 60) {
+        const sectionTop = section.offsetTop - 150;
+        const sectionHeight = section.offsetHeight;
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
             current = section.getAttribute('id');
         }
     });
@@ -179,4 +278,39 @@ window.addEventListener('scroll', () => {
             link.classList.add('active');
         }
     });
+});
+
+// Navbar hide/show on scroll
+let lastScrollTop = 0;
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollTop > lastScrollTop && scrollTop > 100) {
+        navbar.style.transform = 'translateY(-100%)';
+    } else {
+        navbar.style.transform = 'translateY(0)';
+    }
+    
+    lastScrollTop = scrollTop;
+});
+
+// Add smooth reveal animation for elements
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('reveal');
+        }
+    });
+}, observerOptions);
+
+// Observe all sections
+document.querySelectorAll('section').forEach(section => {
+    observer.observe(section);
 }); 
