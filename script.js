@@ -213,47 +213,8 @@ async function fetchGitHubStats() {
 // Fetch GitHub stats when page loads
 fetchGitHubStats();
 
-// Contact Form Submission
-const form = document.getElementById("contact-form");
-const formStatus = document.getElementById("form-status");
-
-async function handleSubmit(event) {
-    event.preventDefault();
-    const data = new FormData(event.target);
-    formStatus.innerText = "Sending...";
-    formStatus.style.color = 'var(--text-color)';
-    
-    try {
-        const response = await fetch(event.target.action, {
-            method: 'POST',
-            body: data,
-            headers: {
-                'Accept': 'application/json'
-            }
-        });
-        
-        if (response.ok) {
-            formStatus.innerText = "Thanks for your submission!";
-            formStatus.style.color = 'var(--primary-color)';
-            form.reset();
-        } else {
-            const result = await response.json();
-            if (Object.hasOwn(result, 'errors')) {
-                formStatus.innerText = result["errors"].map(error => error["message"]).join(", ");
-            } else {
-                formStatus.innerText = "Oops! There was a problem submitting your form";
-            }
-            formStatus.style.color = 'red';
-        }
-    } catch (error) {
-        formStatus.innerText = "Oops! There was a problem submitting your form";
-        formStatus.style.color = 'red';
-    }
-}
-
-if (form) {
-    form.addEventListener("submit", handleSubmit);
-}
+// Contact Form Submission - Using mailto, no JavaScript handler needed
+// The form will open the user's default email client
 
 // Add active class to navigation links based on scroll position
 window.addEventListener('scroll', () => {
