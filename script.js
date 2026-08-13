@@ -175,44 +175,6 @@ new Typed('#typewriter', {
     backDelay: 1500,
 });
 
-// GitHub Statistics
-async function fetchGitHubStats() {
-    const username = 'n-r-kondapalli-21';
-    
-    try {
-        // Fetch user profile
-        const userResponse = await fetch(`https://api.github.com/users/${username}`);
-        const userData = await userResponse.json();
-        
-        // Fetch repositories
-        const reposResponse = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`);
-        const reposData = await reposResponse.json();
-        
-        // Calculate total stars
-        const totalStars = reposData.reduce((acc, repo) => acc + repo.stargazers_count, 0);
-        
-        // Update stats
-        document.getElementById('repo-count').textContent = userData.public_repos || reposData.length;
-        document.getElementById('star-count').textContent = totalStars;
-        document.getElementById('follower-count').textContent = userData.followers;
-        
-        // Estimate total commits (GitHub API doesn't provide this directly)
-        const totalCommits = reposData.length > 0 ? Math.floor(reposData.length * 15) : 0;
-        document.getElementById('commit-count').textContent = totalCommits + '+';
-        
-    } catch (error) {
-        console.error('Error fetching GitHub stats:', error);
-        // Set default values if API fails
-        document.getElementById('repo-count').textContent = '10+';
-        document.getElementById('star-count').textContent = '5+';
-        document.getElementById('follower-count').textContent = '5+';
-        document.getElementById('commit-count').textContent = '50+';
-    }
-}
-
-// Fetch GitHub stats when page loads
-fetchGitHubStats();
-
 // Contact Form Submission - Using mailto, no JavaScript handler needed
 // The form will open the user's default email client
 

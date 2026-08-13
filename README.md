@@ -149,7 +149,7 @@ The portfolio is deployed at: [https://n-r-kondapalli-21.github.io/my_portfolio/
 
 ## 📧 Contact
 
-- **Email**: narayanakondapalli@gmail.com
+- **Email**: narayanakondapalli148@gmail.com
 - **GitHub**: [n-r-kondapalli-21](https://github.com/n-r-kondapalli-21)
 - **LinkedIn**: [Narayana Rao Kondapalli](https://www.linkedin.com/in/narayana-rao-kondapalli-110810318/)
 
